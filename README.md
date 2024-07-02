@@ -14,17 +14,20 @@ for _, v in ipairs(workspace.Mob:GetDescendants()) do
         table.sort(Mobs_Table)
     end
 end
-
+Weapom = {}
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+    table.insert(Weapom,v.Name) 
+end
 local PlayerTP1
 local TweenService = game:GetService("TweenService")
 
 local Dropdown = Section:CreateDropdown("Select Mobs!", Mobs_Table, 0, function(t)
     PlayerTP1 = t
 end)
-local Dropdown = Section:CreateDropdown("Select Weapon!", {"Combat", "Katana"}, 0, function(t)
-    Weapon = t
+local Dropdown = Section:CreateDropdown("Select Weapon!", Weapom, 0, function(g)
+    Weapon = g
 end)
-local Toggle = Section:CreateToggle("Auto [Mobs]", function(Value)
+local Toggle = Section:CreateToggle("Auto Farm/Mobs", function(Value)
 _G.Attack = Value
 while _G.Attack do
 task.wait(1)  -- Wait for 1 second before checking for enemies
@@ -42,7 +45,7 @@ end
 end)
 end
 end)
-local Toggle = Section:CreateToggle("Auto [Click]", function(Value)
+local Toggle = Section:CreateToggle("Auto Weapn/Click", function(Value)
 _G.weapon = Value
 while _G.weapon do
 wait()  -- Wait for 1 second before checking for enemies
