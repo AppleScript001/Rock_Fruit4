@@ -24,7 +24,7 @@ local TweenService = game:GetService("TweenService")
 local Dropdown = Section:CreateDropdown("Select Mobs!", Mobs_Table, 0, function(t)
     PlayerTP1 = t
 end)
-local Dropdown = Section:CreateDropdown("Select Weapon!", Weapom, 0, function(g)
+local Dropdown = Section:CreateDropdown("Select Weapon!", {"Combat", "KatanaWooden", "Katana", "Yoru", "Muaythai", "David", "Megumin", "Shisui", "Wado", "DarkKatana", "Gryphon"}, 0, function(g)
     Weapon = g
 end)
 local Toggle = Section:CreateToggle("Auto Farm/Mobs", function(Value)
@@ -45,7 +45,7 @@ end
 end)
 end
 end)
-local Toggle = Section:CreateToggle("Auto Weapn/Click", function(Value)
+local Toggle = Section:CreateToggle("Auto Weapon/Click", function(Value)
 _G.weapon = Value
 while _G.weapon do
 wait()  -- Wait for 1 second before checking for enemies
